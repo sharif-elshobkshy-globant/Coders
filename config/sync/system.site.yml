@@ -1,11 +1,11 @@
 uuid: 103de465-5692-4841-9895-a1525234a5f9
-name: Site-Install
+name: 'Coders Map Exercise'
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /map/osm
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

@@ -10,7 +10,6 @@ dependencies:
     - geolocation
     - node
     - user
-    - filter
 id: osm
 label: OSM
 module: views
@@ -313,7 +312,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: OSM
+      title: ''
       header: {  }
       footer: {  }
       empty: {  }
