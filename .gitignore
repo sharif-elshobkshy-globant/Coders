@@ -13,6 +13,7 @@ docroot/libraries
 docroot/profiles/libraries
 docroot/profiles/modules
 docroot/profiles/contrib
+docroot/profiles/config_installer
 
 # Ignore Drupal's file directory
 docroot/sites/default/files
