@@ -46,7 +46,6 @@ save and exit.
 5- Install CMS and upload Coders CMS configuration.
 ```sh
 /app# exit
-appdock$ make cms-install
-appdock$ make cms-update
+appdock$ make cms-install; make cms-update
 ```
 6- Verify the installation. When this process is complete, you should have a working drupal site by navigating to [http://coders.local:8000/](http://coders.local:8000/)
