@@ -48,3 +48,10 @@ save and exit.
 appdock$ make cms-install; make cms-update
 ```
 6- Verify the installation. When this process is complete, you should have a working drupal site by navigating to [http://coders.local:8000/](http://coders.local:8000/)
+
+
+### OpenStreetMap ###
+In order to display locations on a OpenStreetMap, create Locations nodes with latitude/longitude
+
+
+
