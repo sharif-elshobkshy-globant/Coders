@@ -1,0 +1,61 @@
+#######################################
+# Webserver
+
+# General
+WEB_DOCUMENT_ROOT=/app/docroot/coders
+WEB_DOCUMENT_INDEX=index.php
+CLI_SCRIPT=""
+
+#######################################
+# SSH settings
+# SSH public key (without comment):
+# -> ssh-rsa AAAAB3Nza....
+#  Github public ssh keys:
+# -> https://github.com/USERNAME.keys
+SSH_AUTH_KEY=""
+
+#######################################
+# MySQL settings
+# -> if you change these settings
+#    you have to remove the database:
+#         docker-compose rm mysql
+#    because it's stored database in
+#    volume and provisioning is only
+#    done once.
+MYSQL_ROOT_PASSWORD=dev
+MYSQL_USER=dev
+MYSQL_PASSWORD=dev
+MYSQL_DATABASE=database
+
+#######################################
+# FTP settings
+FTP_USER=dev
+FTP_PASSWORD=dev
+FTP_PATH=/storage/ftp/
+
+
+#######################################
+# PHP Debugger (xdebug|blackfire|none)
+
+PHP_DEBUGGER=xdebug
+
+#######################################
+# Context environment
+
+# TYPO3
+TYPO3_CONTEXT=Development/Docker
+
+# Symfony
+SYMFONY_ENV=dev
+SYMFONY_DEBUG=0
+
+# CakePHP
+CAKE_ENV=dev
+
+# yii
+YII_ENVIRONMENT=Development
+
+# apache document root
+WEB_DOCUMENT_ROOT=/var/www/html/coders
+WEB_DOCUMENT_INDEX=index.php
+CLI_SCRIPT=""

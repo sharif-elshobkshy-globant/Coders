@@ -1,0 +1,100 @@
+{
+  "name": "spiritclips/Coders",
+  "description": "Coders CMS",
+  "type": "project",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "classmap": [
+      "scripts/composer/ScriptHandler.php"
+    ]
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "require": {
+    "drupal-composer/drupal-scaffold": "^2.2",
+    "webflo/drupal-core-strict": "8.5.1",
+    "drush/drush": "~8.1.12",
+    "phpunit/phpunit": "~5.7",
+    "webflo/drupal-finder": "^1.0",
+    "drupal/config_installer": "^1.4",
+    "drupal/restui": "^1.15",
+    "drupal/console": "1.7",
+    "composer/installers": "^1.0.24",
+    "cweagans/composer-patches": "^1.6.0",
+    "drupal/admin_toolbar": "^1.23",
+    "drupal/core": "^8.5",
+    "drupal/entity_browser": "^2.0@alpha",
+    "drupal/fieldable_path": "^1.0",
+    "drupal/inline_entity_form": "^1.0@beta",
+    "drupal/media_entity_browser": "^2.0@alpha",
+    "drupal/file_entity": "^2.0@beta",
+    "drupal/field_group": "^1.0@RC",
+    "drupal/libraries": "3.x-dev",
+    "drupal/devel": "1.2",
+    "drupal/geolocation": "2.x-dev"
+  },
+
+  "require-dev": {
+    "burdamagazinorg/thunder-dev-tools": "dev-master",
+    "drupal/config_inspector": "1.x-dev",
+    "drupal/features": "^3.5",
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "scripts": {
+    "drupal-scaffold": "Drupal\\DrupalScaffold\\Plugin::scaffold",
+    "post-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "post-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "dependency-cleanup": [
+        "Drupal\\composer\\ScriptHandler::dependencyCleanup"
+    ],
+    "post-package-install": [
+        "Drupal\\Core\\Composer\\Composer::vendorTestCodeCleanup"
+    ],
+    "post-package-update": [
+        "Drupal\\Core\\Composer\\Composer::vendorTestCodeCleanup"
+    ]
+  },
+  "extra": {
+    "enable-patching": true,
+    "installer-paths": {
+      "docroot/core": ["type:drupal-core"],
+      "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+      "docroot/modules/custom/{$name}": ["type:drupal-custom-module"],
+      "docroot/profiles/{$name}": ["type:drupal-profile"],
+      "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
+      "docroot/themes/custom/{$name}": ["type:drupal-custom-theme"],
+      "docroot/libraries/{$name}": ["type:drupal-library"],
+      "drush/contrib/{$name}": ["type:drupal-drush"]
+    },
+    "patches": {
+      "drupal/core": {
+        "Allow a profile to be installed from existing config": "https://www.drupal.org/files/issues/drupal-n2788777-105.patch"
+      },
+      "drupal/jsonapi": {
+          "Make the file URLs full URLs": "https://www.drupal.org/files/issues/2929600--use-full-url-file--2.patch"
+      },
+      "drupal/openapi": {
+          "Small inaccuracies for JSON API schemas": "https://www.drupal.org/files/issues/2018-04-28/2967571--openapi--multiple-minor-adjustments--2.patch"
+      },
+      "drupal/schemata": {
+          "Small inaccuracies for JSON API schemas": "https://www.drupal.org/files/issues/2018-04-28/2967572--schemata--multiple-minor-adjustments--3.patch"
+      },
+      "drupal/views_taxonomy_term_name_depth": {
+          "Allow Multiple Values": "https://www.drupal.org/files/issues/views_taxonomy_term_name_depth-allow_multiple-7.patch"
+      }
+    },
+    "config": {
+      "process-timeout": 0
+    }
+  }
+}
