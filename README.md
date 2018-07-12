@@ -10,6 +10,7 @@
 1- Go to App Docker folder.
 ```sh
 $ cd appdock/
+```
 
 2- Build it using make
 ```sh
