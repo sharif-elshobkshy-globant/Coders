@@ -7,6 +7,8 @@
 * docker
 * docker-compose
 
+### Setup ###
+
 1- Go to App Docker folder.
 ```sh
 $ cd appdock/
