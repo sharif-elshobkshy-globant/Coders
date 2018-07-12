@@ -1,0 +1,39 @@
+uuid: 876d2732-0cc6-4802-9456-59e552f93d0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.location.field_description
+    - field.field.node.location.field_location_info
+    - node.type.location
+  module:
+    - geolocation
+    - text
+    - user
+    - filter
+id: node.location.teaser
+targetEntityType: node
+bundle: location
+mode: teaser
+content:
+  field_description:
+    type: text_default
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_location_info:
+    type: geolocation_latlng
+    weight: 2
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

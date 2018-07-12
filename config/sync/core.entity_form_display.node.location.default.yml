@@ -1,0 +1,52 @@
+uuid: 610baaac-a1c0-464d-bc12-00619a1f3a6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.location.field_description
+    - field.field.node.location.field_location_info
+    - node.type.location
+  module:
+    - geolocation
+    - text
+    - filter
+id: node.location.default
+targetEntityType: node
+bundle: location
+mode: default
+content:
+  field_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_location_info:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_latlng
+    region: content
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

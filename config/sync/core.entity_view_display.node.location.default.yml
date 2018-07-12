@@ -1,0 +1,48 @@
+uuid: f3ff63bf-083f-42fa-a39a-17da6e3dfd94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.location.field_description
+    - field.field.node.location.field_location_info
+    - node.type.location
+  module:
+    - geolocation
+    - text
+    - user
+    - filter
+id: node.location.default
+targetEntityType: node
+bundle: location
+mode: default
+content:
+  field_description:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_location_info:
+    weight: 102
+    label: above
+    settings:
+      title: ''
+      set_marker: '1'
+      common_map: '1'
+      data_provider_settings: {  }
+      map_provider_id: leaflet
+      map_provider_settings: {  }
+      info_text:
+        value: ''
+        format: basic_html
+      use_overridden_map_settings: 0
+    third_party_settings: {  }
+    type: geolocation_map
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

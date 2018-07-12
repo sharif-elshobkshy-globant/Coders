@@ -1,0 +1,18 @@
+uuid: 326f9696-e8cf-472c-b40f-c485559b4e67
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - filter
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Location
+type: location
+description: 'Create location points to use on map.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false
