@@ -26,7 +26,7 @@ appdock$ make root
 * Set whatever user and pass when installing mysql, actually it wont be used however it is needed for running `mysql` command.
 
 4- Update local hosts file.
-Show connections copy the ip and exit from the app docker container.
+Copy the inet addr and exit from the app docker container.
 ```sh
 /app# ifconfig
 /app# exit
