@@ -54,6 +54,7 @@ appdock$ make cms-install; make cms-update
 In order to display locations on a OpenStreetMap:
 
 1- Create Locations nodes with latitude/longitude
+
 2- Visit /map/osm or the homepage.
 
 
