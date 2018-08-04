@@ -1,0 +1,4 @@
+services:
+  wiki.wikiApi:
+    class: Drupal\wiki\WikiApi
+    arguments: ['@http_client']

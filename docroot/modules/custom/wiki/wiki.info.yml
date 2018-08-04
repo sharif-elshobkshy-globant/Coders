@@ -1,0 +1,8 @@
+name: Wiki
+description: 'Wikipedia Integration'
+type: module
+package: Wiki
+version: VERSION
+core: 8.x
+dependencies:
+  - block

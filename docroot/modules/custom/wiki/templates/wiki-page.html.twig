@@ -1,0 +1,18 @@
+<section class="wiki-main">
+  <div class="wiki-header">
+    <h2>Results for: {{ parameters.key }}</h2>
+    <h2>Total Found: {{ parameters.data.total }}</h2>
+  </div>
+
+  {% for item in parameters.data.result %}
+    <div class="article">
+      <div class="wiki-link">
+        <a href="{{ parameters.data.base }}{{ item.title }}">{{ item.title }}</a>
+      </div>
+      <div class="wiki-data">
+        {{ item.snippet|raw }} ...
+      </div>
+    </div>
+  {% endfor %}
+
+</section>

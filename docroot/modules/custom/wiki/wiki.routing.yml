@@ -1,0 +1,14 @@
+wiki_search.render:
+  path: '/wiki'
+  defaults:
+    _controller: '\Drupal\wiki\Controller\WikiController::mainRender'
+    _title: 'Search Wikipedia'
+  requirements:
+    _permission: 'access content'
+wiki_search_param.render:
+  path: '/wiki/{key}'
+  defaults:
+    _controller: '\Drupal\wiki\Controller\WikiController::mainRender'
+    _title: 'Search Wikipedia'
+  requirements:
+    _permission: 'access content'
