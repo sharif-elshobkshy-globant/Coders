@@ -7,6 +7,9 @@
 * docker
 * docker-compose
 
+
+### Configuration ###
+
 1- Go to App Docker folder.
 ```sh
 $ cd appdock/
@@ -26,7 +29,7 @@ appdock$ make root
 * Set whatever user and pass when installing mysql, actually it wont be used however it is needed for running `mysql` command.
 
 4- Update local hosts file.
-Show connections copy the ip and exit from the app docker container.
+Copy the inet addr and exit from the app docker container.
 ```sh
 /app# ifconfig
 /app# exit
@@ -45,8 +48,16 @@ save and exit.
 
 5- Install CMS and upload Coders CMS configuration.
 ```sh
-/app# exit
-appdock$ make cms-install
-appdock$ make cms-update
+appdock$ make cms-install; make cms-update
 ```
 6- Verify the installation. When this process is complete, you should have a working drupal site by navigating to [http://coders.local:8000/](http://coders.local:8000/)
+
+
+### OpenStreetMap ###
+In order to display locations on a OpenStreetMap:
+
+1- Create Locations nodes with latitude/longitude
+
+2- Visit /map/osm or the homepage.
+
+
