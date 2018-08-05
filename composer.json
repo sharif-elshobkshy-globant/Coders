@@ -37,22 +37,28 @@
     "drupal/field_group": "^1.0@RC",
     "drupal/libraries": "3.x-dev",
     "drupal/devel": "1.2",
-    "drupal/geolocation": "2.x-dev"
+    "drupal/geolocation": "2.x-dev",
+    "jakoch/phantomjs-installer": "^2.1",
+    "behat/mink-goutte-driver": "^1.2",
+    "behat/mink-selenium2-driver": "^1.3"
   },
 
   "require-dev": {
     "burdamagazinorg/thunder-dev-tools": "dev-master",
     "drupal/config_inspector": "1.x-dev",
     "drupal/features": "^3.5",
-    "guzzlehttp/guzzle": "~6.0"
+    "guzzlehttp/guzzle": "~6.0",
+    "behat/mink": "^1.7"
   },
   "scripts": {
     "drupal-scaffold": "Drupal\\DrupalScaffold\\Plugin::scaffold",
     "post-install-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+      "PhantomInstaller\\Installer::installPhantomJS"
     ],
     "post-update-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+      "PhantomInstaller\\Installer::installPhantomJS"
     ],
     "dependency-cleanup": [
         "Drupal\\composer\\ScriptHandler::dependencyCleanup"

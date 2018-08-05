@@ -9,7 +9,7 @@ use Drupal\Core\Render\RendererInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Builds the search form for the search block.
+ * Builds the wiki search form for the wiki block.
  *
  * @internal
  */
@@ -30,7 +30,7 @@ class WikiBlockForm extends FormBase {
   protected $renderer;
 
   /**
-   * Constructs a new SearchBlockForm.
+   * Constructs a new WikiBlockForm.
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory.

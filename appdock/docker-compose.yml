@@ -12,8 +12,8 @@ services:
       - mysql
       - composer
     ports:
-      - "8000:8000"
-      - "4443:443"
+      - "8800:8000"
+      - "4843:443"
     volumes:
       - ../:/app/
       - ./:/docker/
@@ -45,7 +45,7 @@ services:
       context: docker/mysql/
       dockerfile: MySQL-5.6.Dockerfile
     ports:
-      - 23306:3306
+      - 33306:3306
     volumes_from:
       - storage
     env_file:

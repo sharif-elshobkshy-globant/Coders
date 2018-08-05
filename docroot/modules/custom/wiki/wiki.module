@@ -20,7 +20,7 @@ function wiki_theme($existing, $type, $theme, $path) {
 }
 
 /**
- * Implements hook_form_FORM_ID_alter() for the search_block_form form.
+ * Implements hook_form_FORM_ID_alter() for the wiki_block_form form.
  *
  * @see \Drupal\wiki\Form\WikiBlockForm
  */

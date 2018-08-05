@@ -5,7 +5,7 @@ namespace Drupal\wiki\Controller;
 use Drupal\Core\Controller\ControllerBase;
 
 /**
- * Controller routines for book a class routes.
+ * Controller routines for wiki routes.
  */
 class WikiController extends ControllerBase {
 
