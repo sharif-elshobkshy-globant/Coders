@@ -89,7 +89,6 @@ class WikiBlockForm extends FormBase {
       '#name' => '',
     ];
     $form['#method'] = 'get';
-    //$form['#action'] = '#submitted';
     return $form;
   }
 
@@ -97,7 +96,7 @@ class WikiBlockForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $values = $form_state->getValues();
+
   }
 
 }
