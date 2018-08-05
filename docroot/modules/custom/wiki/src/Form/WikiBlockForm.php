@@ -88,6 +88,7 @@ class WikiBlockForm extends FormBase {
       '#value' => $this->t('Search Wikipedia'),
       '#name' => '',
     ];
+    $form['#action'] = '/wiki';
     $form['#method'] = 'get';
     return $form;
   }
