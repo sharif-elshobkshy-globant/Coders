@@ -45,7 +45,7 @@ class WikiApi {
    *   List of pages containing string.
    *
    */
-  public function getResponse($string) {
+  public function getResponse($string, $limit = 150) {
     $uri = 'https://en.wikipedia.org/w/api.php';
     // Search term in title
     $query = [
@@ -55,7 +55,7 @@ class WikiApi {
       'srprop' => 'snippet',
       'srsearch' => $string,
       'utf8' => '',
-      'srlimit' => 150
+      'srlimit' => $limit
     ];
     $options = ['query' => $query, 'http_errors' => FALSE];
     try {
