@@ -7,6 +7,7 @@ Just enable the module in /admin/modules
 
 ## Search Wiki articles
 Go to /wiki.
+
 The page includes a 'Search' form field.
 
 A user can either enter a value in the form field or provide a url parameter (/wiki/[parameter]).
