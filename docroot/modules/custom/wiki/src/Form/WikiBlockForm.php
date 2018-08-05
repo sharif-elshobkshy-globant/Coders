@@ -77,7 +77,7 @@ class WikiBlockForm extends FormBase {
       ],
     ];
     $form['description'] = [
-      '#markup' => t('Search content in wikepedia.'),
+      '#markup' => t('Search articles on wikepedia.'),
       '#weight' => -1
     ];
     $form['actions'] = [
