@@ -45,10 +45,8 @@ class WikiControllerTest extends BrowserTestBase {
   public function testMainRenderNoResult() {
     $controller = new WikiController();
     $result = $controller->mainRender();
-
     // Test empty response from Controller.
-    $this->assertEqual($result, array(), 'Empty response expected when no search key provided.');
+    $this->assertEqual($result['#parameters']['data'], array(), 'Empty response expected when no search key provided.');
   }
-
 
 }
