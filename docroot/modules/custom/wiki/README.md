@@ -2,7 +2,6 @@
 
 Seach articles on Wikipedia. This modules integrates with Wikipedia's API.
 
-A "Wiki Search Form" block is created and can be placed in any page.
 
 ## Search Wiki articles
 Go to /wiki.
