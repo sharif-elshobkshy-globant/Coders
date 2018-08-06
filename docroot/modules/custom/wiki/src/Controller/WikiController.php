@@ -9,20 +9,40 @@ use Drupal\Core\Controller\ControllerBase;
  */
 class WikiController extends ControllerBase {
 
-  function mainRender($key = '') {
-    $client = \Drupal::service('wiki.wikiApi');
-    $params = \Drupal::request()->query->all();
+  /**
+   * The wikipedia API client.
+   *
+   * @var \Drupal\wiki\WikiApi
+   */
+  protected $wikiClient;
 
+  /**
+   * Constructs a WikiController object.
+   */
+  public function __construct() {
+    $this->wikiClient = \Drupal::service('wiki.wikiApi');
+  }
+
+  /**
+   * Main Render function callback.
+   */
+  function mainRender($key = '') {
+    // Wiki Search Form
+    $form = $this->formBuilder()->getForm('Drupal\wiki\Form\WikiBlockForm');
+    $params = \Drupal::request()->query->all();
+    // Get keys.
+    $content = [];
     if (isset($params['search']) && ($params['search'])) {
       $key = $params['search'];
     }
-    if (empty($key)) {
-      return [];
+    // Get articles from wikipedia.
+    if ($key) {
+      $content = $this->wikiClient->getResponse($key);
     }
-    $content = $client->getResponse($key);
     return [
       '#theme' => 'wiki_page',
       '#parameters' => [
+        'searchForm' => $form,
         'key' => $key,
         'data' => $content
       ]

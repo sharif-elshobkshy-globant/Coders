@@ -1,6 +1,12 @@
 <section class="wiki-main">
+
   <div class="wiki-header">
-    <h2>Results for: {{ parameters.key }}</h2>
+    <div class="wiki-search-form">
+      {{ parameters.searchForm }}
+    </div>
+    {% if parameters.key %}
+      <h2>Results for: {{ parameters.key }}</h2>
+    {% endif %}
   </div>
 
   {% for item in parameters.data.result %}
