@@ -1,5 +1,5 @@
 {
-  "name": "spiritclips/Coders",
+  "name": "sharif-elshobkshy/Coders",
   "description": "Coders CMS",
   "type": "project",
   "license": "GPL-2.0+",
@@ -18,29 +18,25 @@
   ],
   "require": {
     "drupal-composer/drupal-scaffold": "^2.2",
-    "webflo/drupal-core-strict": "8.5.1",
-    "drush/drush": "~8.1.12",
+    "drush/drush": "8.1.15",
     "phpunit/phpunit": "~5.7",
     "webflo/drupal-finder": "^1.0",
     "drupal/config_installer": "^1.4",
-    "drupal/restui": "^1.15",
     "drupal/console": "1.7",
-    "composer/installers": "^1.0.24",
+    "composer/installers": "^1.2",
     "cweagans/composer-patches": "^1.6.0",
-    "drupal/admin_toolbar": "^1.23",
-    "drupal/core": "^8.5",
-    "drupal/entity_browser": "^2.0@alpha",
+    "drupal/admin_toolbar": "1.26",
+    "drupal/core": "8.6.15",
+    "drupal/entity_browser": "1.6",
     "drupal/fieldable_path": "^1.0",
-    "drupal/inline_entity_form": "^1.0@beta",
-    "drupal/media_entity_browser": "^2.0@alpha",
-    "drupal/file_entity": "^2.0@beta",
-    "drupal/field_group": "^1.0@RC",
+    "drupal/inline_entity_form": "1.0-rc1",
+    "drupal/media_entity_browser": "1.0-beta3",
+    "drupal/file_entity": "2.0-beta5",
+    "drupal/field_group": "1.0",
     "drupal/libraries": "3.x-dev",
-    "drupal/devel": "1.2",
-    "drupal/geolocation": "2.x-dev",
-    "jakoch/phantomjs-installer": "^2.1",
-    "behat/mink-goutte-driver": "^1.2",
-    "behat/mink-selenium2-driver": "^1.3"
+    "drupal/devel": "2.0",
+    "drupal/geolocation": "3.0-rc1",
+    "behat/mink-goutte-driver": "^1.2"
   },
 
   "require-dev": {
@@ -53,12 +49,10 @@
   "scripts": {
     "drupal-scaffold": "Drupal\\DrupalScaffold\\Plugin::scaffold",
     "post-install-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-      "PhantomInstaller\\Installer::installPhantomJS"
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
     ],
     "post-update-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-      "PhantomInstaller\\Installer::installPhantomJS"
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
     ],
     "dependency-cleanup": [
         "Drupal\\composer\\ScriptHandler::dependencyCleanup"
@@ -84,19 +78,11 @@
     },
     "patches": {
       "drupal/core": {
-        "Allow a profile to be installed from existing config": "https://www.drupal.org/files/issues/drupal-n2788777-105.patch"
+        "Allow a profile to be installed from existing config": "https://www.drupal.org/files/issues/drupal-n2788777-105.patch",
+        "#2802803: Temporary files whose files are missing on the disk result in never-ending error log messages": "https://www.drupal.org/files/issues/2018-05-03/missing-temp-files-stuck-in-table-2802803-28.patch"
       },
-      "drupal/jsonapi": {
-          "Make the file URLs full URLs": "https://www.drupal.org/files/issues/2929600--use-full-url-file--2.patch"
-      },
-      "drupal/openapi": {
-          "Small inaccuracies for JSON API schemas": "https://www.drupal.org/files/issues/2018-04-28/2967571--openapi--multiple-minor-adjustments--2.patch"
-      },
-      "drupal/schemata": {
-          "Small inaccuracies for JSON API schemas": "https://www.drupal.org/files/issues/2018-04-28/2967572--schemata--multiple-minor-adjustments--3.patch"
-      },
-      "drupal/views_taxonomy_term_name_depth": {
-          "Allow Multiple Values": "https://www.drupal.org/files/issues/views_taxonomy_term_name_depth-allow_multiple-7.patch"
+      "drupal/entity_browser": {
+          "#3031561: EntityBrowserWizard::__construct()": "https://www.drupal.org/files/issues/2019-02-26/3031561-fix-temp-store-ref-2.patch"
       }
     },
     "config": {
